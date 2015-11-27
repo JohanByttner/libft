@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 14:46:56 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/27 15:17:52 by jbyttner         ###   ########.fr       */
+/*   Created: 2015/11/27 15:16:13 by jbyttner          #+#    #+#             */
+/*   Updated: 2015/11/27 15:16:32 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
-void	ft_putchar(char c)
+/*
+** We could use putchar here, but for large strings, we would receive
+** a significant performance hit.
+*/
+
+void	ft_putstr_fd(const char *s, int fd)
 {
-	ft_putchar_fd(c, 1);
+	write(fd, s, ft_strlen(s));
 }

@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 14:52:50 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/27 14:53:34 by jbyttner         ###   ########.fr       */
+/*   Updated: 2015/11/27 16:18:54 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putnbr(int n)
 {
-	ft_putstr(ft_itoa(n));
+	ft_putnbr_fd(n, 1);
 }

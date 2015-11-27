@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 14:46:56 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/27 15:17:52 by jbyttner         ###   ########.fr       */
+/*   Created: 2015/11/27 16:19:20 by jbyttner          #+#    #+#             */
+/*   Updated: 2015/11/27 16:19:22 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	ft_putchar_fd(c, 1);
+	ft_putstr_fd(ft_itoa(n), fd);
 }

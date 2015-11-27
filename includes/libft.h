@@ -6,14 +6,12 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:37:41 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/27 14:58:43 by jbyttner         ###   ########.fr       */
+/*   Updated: 2015/11/27 16:31:32 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <unistd.h>
-# include <stdlib.h>
 # include <string.h>
 # define UCHAR unsigned char
 
@@ -131,4 +129,13 @@ void	ft_putstr(const char *s);
 void	ft_putendl(const char *s);
 
 void	ft_putnbr(int n);
+
+void	ft_putchar_fd(char c, int fd);
+
+void	ft_putstr_fd(const char *s, int fd);
+
+void	ft_putendl_fd(const char *s, int fd);
+
+void	ft_putnbr_fd(int n, int fd);
+
 #endif

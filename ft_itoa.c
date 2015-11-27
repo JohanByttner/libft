@@ -6,10 +6,11 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 16:07:40 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/25 16:08:15 by jbyttner         ###   ########.fr       */
+/*   Updated: 2015/11/27 16:26:23 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_itoa(int value)

@@ -6,13 +6,13 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:35:27 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/25 15:35:28 by jbyttner         ###   ########.fr       */
+/*   Updated: 2015/11/27 16:28:39 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strncpy(char *dest, const char *src, size_t n)
+char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
 	size_t	i;
 
