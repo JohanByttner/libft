@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 16:41:51 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/27 16:26:14 by jbyttner         ###   ########.fr       */
+/*   Updated: 2015/11/28 19:59:28 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@
 
 void	*ft_memalloc(size_t size)
 {
-	UCHAR *ptr;
+	unsigned char	*ptr;
 
 	if (size == 0)
 		return (0);
-	ptr = (UCHAR *)malloc(sizeof(UCHAR) * size);
+	ptr = (unsigned char *)malloc(sizeof(unsigned char) * size);
 	if (!ptr)
 		return (0);
 	while (size-- != 0)

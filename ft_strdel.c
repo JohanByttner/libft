@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 16:56:35 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/25 17:30:40 by jbyttner         ###   ########.fr       */
+/*   Updated: 2015/11/27 23:31:00 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 
 void	ft_strdel(char **as)
 {
-	ft_memdel((void *)as);
+	if (as && *as)
+		ft_memdel((void *)as);
 }

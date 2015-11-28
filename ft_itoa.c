@@ -6,12 +6,16 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 16:07:40 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/27 16:26:23 by jbyttner         ###   ########.fr       */
+/*   Updated: 2015/11/27 22:34:34 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
+
+/*
+** Returns a null pointer on memory failure
+*/
 
 char	*ft_itoa(int value)
 {
@@ -30,9 +34,9 @@ char	*ft_itoa(int value)
 		magnitude++;
 		digit /= 10;
 	}
-	nbr = (char*)malloc(sizeof(char) * (magnitude + 1 + sign));
+	if (!(nbr = (char*)ft_memalloc(sizeof(char) * (magnitude + 1 + sign))))
+		return (0);
 	nbr[0] = '-';
-	nbr[magnitude + sign] = '\0';
 	while (magnitude >= 0 + sign)
 	{
 		digit = value % 10;

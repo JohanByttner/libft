@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:34:10 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/25 15:34:11 by jbyttner         ###   ########.fr       */
+/*   Updated: 2015/11/28 20:03:25 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	i;
-	UCHAR	ch;
-	UCHAR	*smem;
+	size_t			i;
+	unsigned char	ch;
+	unsigned char	*smem;
 
 	i = 0;
 	ch = (unsigned char)c;
@@ -24,6 +24,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	while (i < n)
 	{
 		smem[i] = ch;
+		i++;
 	}
 	return (s);
 }

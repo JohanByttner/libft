@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 19:49:12 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/27 22:37:40 by jbyttner         ###   ########.fr       */
+/*   Created: 2015/11/27 19:22:23 by jbyttner          #+#    #+#             */
+/*   Updated: 2015/11/27 22:32:26 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strjoin(const char *s1, const char *s2)
-{
-	char	*copy;
-	size_t	length;
+/*
+** I still think casting malloc returns is a bad idea ...
+*/
 
-	length = ft_strlen(s1) + ft_strlen(s2) + 1;
-	if (!(copy = (char *)malloc(sizeof(char) * length)))
-		return (0);
-	ft_strcpy(copy, s1);
-	ft_strcat(copy, s2);
-	return (copy);
+t_list	*ft_lstnew(const void *content, size_t content_size)
+{
+	t_list	*ptr;
+
+	if ((ptr = (t_list *)malloc(sizeof(t_list))))
+	{
+		if (!(ptr->content = ft_memalloc(content_size)))
+		{
+			free(ptr);
+			return (0);
+		}
+		if (content)
+			ft_memcpy(ptr->content, content, content_size);
+		ptr->content_size = content ? content_size : 0;
+		ptr->next = 0;
+	}
+	return (ptr);
 }
