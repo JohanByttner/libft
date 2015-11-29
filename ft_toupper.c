@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 16:21:55 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/25 16:28:47 by jbyttner         ###   ########.fr       */
+/*   Updated: 2015/11/29 00:35:17 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_toupper(int c)
 {
 	if (ft_islower(c))
-		return (c + 'a' - 'A');
+		return (c + 'A' - 'a');
 	else
 		return (c);
 }

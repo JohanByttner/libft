@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:29:26 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/25 15:35:48 by jbyttner         ###   ########.fr       */
+/*   Updated: 2015/11/29 00:33:48 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	if ((char)c == '\0')
-		return (ft_strchr(s, '\0'));
-	while (ft_strchr(s, c))
-		s = ft_strchr(s, c);
-	return ((char *)s);
+	const char	*ptr;
+
+	ptr = 0;
+	while (*s != '\0')
+	{
+		if (*s == c)
+			ptr = s;
+		s++;
+	}
+	if (*s == c)
+		ptr = s;
+	return ((char *)ptr);
 }

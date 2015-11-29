@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 19:44:51 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/27 19:55:36 by jbyttner         ###   ########.fr       */
+/*   Updated: 2015/11/29 00:47:52 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list	*copy;
-	t_list	*copy_next;
+	t_list	*tmp;
 	t_list	*next;
 	t_list	*first;
 
@@ -31,12 +31,16 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	while (lst)
 	{
 		next = lst->next;
-		copy_next = f(lst);
-		if (copy)
-			copy->next = copy_next;
-		copy = copy->next;
-		first = first ? first : copy;
+		tmp = f(lst);
 		lst = next;
+		if (!(tmp = ft_lstnew(tmp->content, tmp->content_size)))
+			return (0);
+		tmp->next = 0;
+		if (copy)
+			copy->next = tmp;
+		else
+			first = tmp;
+		copy = tmp;
 	}
 	return (first);
 }

@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:33:42 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/28 20:00:22 by jbyttner         ###   ########.fr       */
+/*   Updated: 2015/11/28 20:48:21 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,19 @@
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	size_t				i;
-	unsigned char		*result;
-	unsigned char		*dest_c;
-	const unsigned char	*src_c;
+	size_t			i;
+	char		*dest_c;
+	const char	*src_c;
 
 	i = 0;
-	dest_c = (unsigned char *)dest;
-	src_c = (const unsigned char *)src;
-	while (i < n && src_c[i] != c)
+	dest_c = dest;
+	src_c = src;
+	while (i < n)
 	{
 		dest_c[i] = src_c[i];
+		if (src_c[i] == c)
+			return (&(dest_c[i + 1]));
 		i++;
 	}
-	if (i == n)
-		result = 0;
-	else
-		result = dest_c + i + 1;
-	return (result);
+	return (0);
 }
