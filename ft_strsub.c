@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 14:07:01 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/29 01:06:04 by jbyttner         ###   ########.fr       */
+/*   Updated: 2015/11/29 18:16:11 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ char	*ft_strsub(const char *s, unsigned int start, size_t len)
 {
 	char	*copy;
 
-	if ((copy = (char *)malloc(sizeof(char) * (len + 1))))
-	{
+	if (!(*s))
+		return (0);
+	if (!(len))
+		return ((char *)ft_memalloc(sizeof(char)));
+	copy = 0;
+	if ((copy = (char *)ft_memalloc(sizeof(char) * (len + 1))))
 		if (start <= ft_strlen(s))
 			ft_strlcpy(copy, s + start, len + 1);
-		else
-			copy[0] = '\0';
-		copy[len] = '\0';
-	}
 	return (copy);
 }

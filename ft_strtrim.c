@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 19:53:24 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/26 20:15:53 by jbyttner         ###   ########.fr       */
+/*   Updated: 2015/11/29 18:25:05 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,11 @@ char	*ft_strtrim(const char *s)
 	start = 0;
 	while (s[start] == ' ' || s[start] == '\n' || s[start] == '\t')
 		start++;
-	end = ft_strlen(s);
-	while ((s[end] == ' ' || s[end] == '\n' || s[end] == '\t') && end > 0)
+	if ((end = ft_strlen(s)))
+		end--;
+	while (end > 0 && (s[end] == ' ' || s[end] == '\n' || s[end] == '\t'))
 		end--;
 	if (end == 0)
-	{
-		start = 0;
-		end = 0;
-	}
+		return ((char *)ft_memalloc(sizeof(char)));
 	return (ft_strsub(s, start, end - start + 1));
 }
