@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/29 19:06:38 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/12/02 22:37:05 by jbyttner         ###   ########.fr       */
+/*   Updated: 2015/12/08 13:08:55 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 ** to the newly created pointer. Any bytes beyond new_length
 ** in mem will be lost. If malloc fails, the function returns 0
 ** and the original memory is not affected.
-** Returns 1 upon success
+** Returns a pointer to tmp upon success
 ** This function is intended as a quick-and-dirty alternative to realloc.
 */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int		ft_memadjust(const void **mem, size_t new_length)
+void	*ft_memadjust(const void **mem, size_t new_length)
 {
 	unsigned char	*tmp;
 
@@ -32,6 +32,6 @@ int		ft_memadjust(const void **mem, size_t new_length)
 		return (0);
 	ft_memcpy(tmp, mem, new_length);
 	free(*mem);
-	*mem = result;
-	return (1);
+	*mem = tmp;
+	return ((void *)tmp);
 }

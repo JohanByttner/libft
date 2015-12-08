@@ -6,14 +6,14 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/05 17:19:20 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/12/05 17:35:34 by jbyttner         ###   ########.fr       */
+/*   Updated: 2015/12/08 13:20:34 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Takes 
+** Takes
 */
 
 /*
@@ -24,7 +24,7 @@
 
 char	*ft_strskip(char *str, const char *skip)
 {
-	const char	it;
+	const char	*it;
 	int			goto_10;
 
 	while (*str != '\0')

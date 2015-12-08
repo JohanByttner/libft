@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:32:19 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/27 16:28:01 by jbyttner         ###   ########.fr       */
+/*   Updated: 2015/12/08 12:55:04 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	ft_memset(s, '\0', n);
+	(void)ft_memset(s, '\0', n);
 }

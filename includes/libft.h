@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:37:41 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/12/05 17:36:35 by jbyttner         ###   ########.fr       */
+/*   Updated: 2015/12/08 13:21:12 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ void			*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 
 void			*ft_memchr(const void *s, int c, size_t n);
-
-int				ft_memadjust(void *mem, size_t new_length);
 
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 
@@ -166,6 +164,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 ** Below are additional extras
 */
 
-char			*ft_strskip (char *str, const char *skip);
+char			*ft_strskip(char *str, const char *skip);
 
+void			*ft_memadjust(const void **mem, size_t length);
 #endif
