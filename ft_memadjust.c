@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/29 19:06:38 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/12/08 13:08:55 by jbyttner         ###   ########.fr       */
+/*   Updated: 2015/12/10 22:14:10 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@
 #include <stdlib.h>
 #include "libft.h"
 
-void	*ft_memadjust(const void **mem, size_t new_length)
+void	*ft_memadjust(void **mem, size_t old_length, size_t new_length)
 {
 	unsigned char	*tmp;
 
 	tmp = ft_memalloc(sizeof(unsigned char) * new_length);
 	if (!(tmp))
 		return (0);
-	ft_memcpy(tmp, mem, new_length);
+	ft_memcpy(tmp, *mem, old_length);
 	free(*mem);
 	*mem = tmp;
 	return ((void *)tmp);
