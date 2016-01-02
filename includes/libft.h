@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:37:41 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/12/10 22:13:23 by jbyttner         ###   ########.fr       */
+/*   Updated: 2016/01/01 22:48:42 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,5 +167,11 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char			*ft_strskip(char *str, const char *skip);
 
 void			*ft_memadjust(void **mem, size_t old_length, size_t new_length);
+
+double			ft_dmax(double i, double j);
+
+double			ft_dmin(double i, double j);
+
+void			*ft_memdup(void *ptr, size_t length);
 
 #endif

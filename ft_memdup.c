@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_memdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 19:36:59 by jbyttner          #+#    #+#             */
-/*   Updated: 2016/01/02 00:40:47 by jbyttner         ###   ########.fr       */
+/*   Created: 2016/01/01 22:45:19 by jbyttner          #+#    #+#             */
+/*   Updated: 2016/01/01 23:19:01 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-/*
-** Added (new == 0) protection (so calls can be chained)
-*/
-
-void	ft_lstadd(t_list **alst, t_list *new)
+void	*ft_memdup(void *ptr, size_t length)
 {
-	if (*new)
-	{
-		new->next = (*alst);
-		*alst = new;
-	}
+	unsigned char	*copy;
+
+	if (!(copy = (unsigned char *)malloc(sizeof(length))))
+		return (0);
+	ft_memcpy(copy, ptr, length);
+	return (copy);
 }

@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_dmin.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 19:36:59 by jbyttner          #+#    #+#             */
-/*   Updated: 2016/01/02 00:40:47 by jbyttner         ###   ########.fr       */
+/*   Created: 2015/12/24 00:41:41 by jbyttner          #+#    #+#             */
+/*   Updated: 2015/12/24 00:42:19 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Added (new == 0) protection (so calls can be chained)
-*/
-
-void	ft_lstadd(t_list **alst, t_list *new)
+double	ft_dmin(double i, double j)
 {
-	if (*new)
-	{
-		new->next = (*alst);
-		*alst = new;
-	}
+	return (i < j ? i : j);
 }
