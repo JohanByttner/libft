@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 19:36:59 by jbyttner          #+#    #+#             */
-/*   Updated: 2016/01/02 00:40:47 by jbyttner         ###   ########.fr       */
+/*   Updated: 2016/01/02 01:10:25 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-	if (*new)
+	if (new)
 	{
 		new->next = (*alst);
 		*alst = new;
