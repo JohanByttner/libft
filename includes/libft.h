@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:37:41 by jbyttner          #+#    #+#             */
-/*   Updated: 2016/01/01 22:48:42 by jbyttner         ###   ########.fr       */
+/*   Updated: 2016/01/03 20:04:59 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,5 +173,9 @@ double			ft_dmax(double i, double j);
 double			ft_dmin(double i, double j);
 
 void			*ft_memdup(void *ptr, size_t length);
+
+t_list			*ft_lstlast(t_list *list);
+
+t_list			*ft_lstmerge(t_list *l1, t_list *l2);
 
 #endif

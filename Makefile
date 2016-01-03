@@ -6,7 +6,7 @@
 #    By: jbyttner <jbyttner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/09/21 16:00:38 by jbyttner          #+#    #+#              #
-#    Updated: 2016/01/01 22:48:59 by jbyttner         ###   ########.fr        #
+#    Updated: 2016/01/03 20:05:18 by jbyttner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,8 @@ SRC=ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c		\
 		ft_lstmap.c	\
 		ft_memadjust.c	\
 		ft_dmax.c ft_dmin.c \
-		ft_memdup.c
+		ft_memdup.c	\
+		ft_lstlast.c ft_lstmerge.c
 ROOTDIR=./
 LIBDIR=$(ROOTDIR)./
 BINDIR=$(ROOTDIR)./
