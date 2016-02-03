@@ -6,7 +6,7 @@
 #    By: jbyttner <jbyttner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/09/21 16:00:38 by jbyttner          #+#    #+#              #
-#    Updated: 2016/01/03 20:05:18 by jbyttner         ###   ########.fr        #
+#    Updated: 2016/02/03 11:32:28 by jbyttner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ DIR=./
 
 OBJ=$(SRC:.c=.o)
 CC=gcc
-CFLAGS=-Wall -Wextra -Werror -c -pg
+CFLAGS=-Wall -Wextra -c -g
 AR=ar
 ARFLAGS=rc
 RM=rm -f
