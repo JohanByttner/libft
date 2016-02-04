@@ -6,19 +6,19 @@
 /*   By: jbyttner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/04 16:39:10 by jbyttner          #+#    #+#             */
-/*   Updated: 2016/02/04 17:30:35 by jbyttner         ###   ########.fr       */
+/*   Updated: 2016/02/04 18:08:10 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#define FT_LONG_MIN -100
-#define FT_LONG_MAX 100
+#define FT_LONG_MAX 9223372036854775807L
+#define FT_LONG_MIN (-FT_LONG_MAX - 1)
 
-static inline void	ft_strtol_trim(char *s, int *base, int *sign)
+static inline void	ft_strtol_trim(const char *restrict s, int *base, int *sign)
 {
 	char			c;
 
-	while (isspace(*s)) 
+	while (ft_isspace(*s)) 
 		s++;
 	if (*s == '+' || *s == '-')
 		*sign = *s++ == '-' ? 1 : 0;
@@ -37,15 +37,16 @@ static inline void	ft_strtol_trim(char *s, int *base, int *sign)
 		*base = c == '0' ? 8 : 10;
 }
 
-static inline char	*ft_strtol_gen(char *s, long *acc, int base, int sign)
+static inline const char	*ft_strtol_gen(const char *restrict s, unsigned long *acc,
+						int base, int sign)
 {
 	unsigned long	cutoff;
 	int				remnant;
 	char			c;
 
-	cutoff = sign ? -(unsigned long)FT_LONG_MIN : FT_LONG_MAX;
+	cutoff = sign ? -(unsigned long)FT_LONG_MIN : (unsigned long)FT_LONG_MAX;
 	remnant = cutoff % base;
-	remnant /= base;
+	cutoff /= base;
 	while ((c = *s++))
 	{
 		if (ft_isdigit(c))
@@ -67,18 +68,20 @@ static inline char	*ft_strtol_gen(char *s, long *acc, int base, int sign)
 	return (s);
 }
 
-long			ft_strtol(const char *restrict s, const char **restrict endp, int base)
+long			ft_strtol(const char *restrict s, char **restrict endp, int base)
 {
-	int			sign;
-	int			b;
-	long		acc;
+	int				sign;
+	int				b;
+	unsigned long	acc;
 
 	b = base;
+	sign = 0;
+	acc = 0;
 	if (!(s))
 		return (0);
 	ft_strtol_trim(s, &b, &sign);
 	s = ft_strtol_gen(s, &acc,  b, sign);
-	if (endptr)
-		*endptr = (char *)s - 1;
+	if (endp)
+		*endp = (char *)s - 1;
 	return (acc);
 }
