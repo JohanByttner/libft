@@ -6,12 +6,12 @@
 #    By: jbyttner <jbyttner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/09/21 16:00:38 by jbyttner          #+#    #+#              #
-#    Updated: 2016/02/04 17:41:59 by jbyttner         ###   ########.fr        #
+#    Updated: 2016/02/04 21:57:15 by jbyttner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libft.a
-SRC=	ft_memset.c			\
+SRC =	ft_memset.c			\
 		ft_bzero.c			\
 		ft_memcpy.c			\
 		ft_memccpy.c		\
@@ -80,6 +80,7 @@ SRC=	ft_memset.c			\
 		ft_memdup.c			\
 		ft_lstlast.c		\
 		ft_lstmerge.c		
+
 ROOTDIR=./
 LIBDIR=$(ROOTDIR)./
 BINDIR=$(ROOTDIR)./
@@ -89,16 +90,19 @@ DIR=./
 
 OBJ=$(SRC:.c=.o)
 CC=gcc
-CFLAGS=-Wall -Wextra -c -g
+CFLAGS=-Wall -Wextra -Werror -c
 AR=ar
 ARFLAGS=rc
 RM=rm -f
+
+.PHONY : all clean fclean re
 
 all:	$(NAME)
 
 $(NAME):
 	$(CC) $(CFLAGS) -I$(INCDIR) $(SRC)
 	$(AR) $(ARFLAGS) $(LIBDIR)$(NAME) $(OBJ)
+	ranlib $(NAME)
 
 clean:
 	$(RM) $(OBJ)
@@ -107,5 +111,3 @@ fclean:	clean
 	$(RM) $(LIBDIR)$(NAME)
 
 re: fclean all
-
-tb: all fclean
