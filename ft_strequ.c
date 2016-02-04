@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 17:15:31 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/25 17:18:28 by jbyttner         ###   ########.fr       */
+/*   Updated: 2016/02/04 16:25:28 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int	ft_strequ(const char *s1, const char *s2)
 {
-	return (!ft_strcmp(s1, s2));
+	if (s1 && s2)
+		return (!(ft_strcmp(s1, s2)));
+	return (0);
 }

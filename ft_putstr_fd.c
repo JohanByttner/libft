@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 15:16:13 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/12/08 12:52:55 by jbyttner         ###   ########.fr       */
+/*   Updated: 2016/02/04 16:32:50 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@
 
 void	ft_putstr_fd(const char *s, int fd)
 {
-	write(fd, s, sizeof(char) * ft_strlen(s));
+	if (s)
+		write(fd, s, sizeof(char) * ft_strlen(s));
 }

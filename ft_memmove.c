@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:34:05 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/12/02 14:39:33 by jbyttner         ###   ########.fr       */
+/*   Updated: 2016/02/04 16:20:49 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,26 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char	*temp;
-	unsigned char	*ptr;
+	unsigned char	*dest_c;
+	unsigned char	*src_c;
+	size_t			diff;
 	size_t			i;
 
-	if (!(temp = malloc(sizeof(unsigned char) * n)))
-		return (0);
-	i = 0;
-	ptr = (unsigned char *)src;
-	while (i < n)
+	src_c = (unsigned char *)src;
+	dest_c = (unsigned char *)dest;
+	if (dest_c == src_c)
+		return (dest);
+	else if (dest_c < src_c)
+		return (ft_memcpy(dest, src, n));
+	diff = (size_t)(dest - src);
+	diff = (diff > n ? n : diff);
+	i = n;
+	while (i > diff)
 	{
-		temp[i] = ptr[i];
-		i++;
+		i -= diff;
+		ft_memcpy(dest_c + i, src_c + i, diff);
 	}
-	i = 0;
-	ptr = (unsigned char *)dest;
-	while (i < n)
-	{
-		ptr[i] = temp[i];
-		i++;
-	}
-	free(temp);
-	return ((void *)ptr);
+	if (i > 0)
+		ft_memcpy(dest_c, src_c, i);
+	return (dest);
 }

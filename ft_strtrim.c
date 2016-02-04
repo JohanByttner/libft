@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 19:53:24 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/12/08 13:19:20 by jbyttner         ###   ########.fr       */
+/*   Updated: 2016/02/04 16:31:09 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strtrim(const char *s)
 	unsigned int	start;
 	size_t			end;
 
+	if (!(s))
+		return (0);
 	start = 0;
 	while (s[start] == ' ' || s[start] == '\n' || s[start] == '\t')
 		start++;

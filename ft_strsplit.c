@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 13:42:31 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/29 18:33:58 by jbyttner         ###   ########.fr       */
+/*   Updated: 2016/02/04 16:35:48 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ char			**ft_strsplit(const char *s, char c)
 	size_t	i;
 	size_t	len;
 
-	result = (char **)ft_memalloc(sizeof(char *) * num_substrings(s, c));
+	if (!(result = (char **)ft_memalloc(sizeof(char *) * num_substrings(s, c))))
+		return (0);
 	i = 0;
 	while (*s != '\0')
 	{

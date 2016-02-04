@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 17:15:31 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/25 17:18:35 by jbyttner         ###   ########.fr       */
+/*   Updated: 2016/02/04 16:29:55 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int	ft_strnequ(const char *s1, const char *s2, size_t n)
 {
-	return (!ft_strncmp(s1, s2, n));
+	if (s1 && s2)
+		return (!(ft_strncmp(s1, s2, n)));
+	return (0);
 }
