@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbyttner <jbyttner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jbyttner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/09/05 16:24:28 by jbyttner          #+#    #+#             */
-/*   Updated: 2016/02/04 21:39:48 by jbyttner         ###   ########.fr       */
+/*   Created: 2016/02/04 17:43:42 by jbyttner          #+#    #+#             */
+/*   Updated: 2016/02/04 19:42:09 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *nptr)
+int		ft_isspace(int c)
 {
-	return ((int)ft_strtol(nptr, 0, 10));
+	if (c == ' '
+		|| c == '\t'
+		|| c == '\n'
+		|| c == '\r'
+		|| c == '\v'
+		|| c == '\f')
+		return (1);
+	else
+		return (0);
 }

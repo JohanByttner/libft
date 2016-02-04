@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 19:22:23 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/27 22:32:26 by jbyttner         ###   ########.fr       */
+/*   Updated: 2016/02/04 21:25:36 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,17 @@ t_list	*ft_lstnew(const void *content, size_t content_size)
 
 	if ((ptr = (t_list *)malloc(sizeof(t_list))))
 	{
-		if (!(ptr->content = ft_memalloc(content_size)))
-		{
-			free(ptr);
-			return (0);
-		}
-		if (content)
+		if (content && content_size)
+			if (!(ptr->content = ft_memalloc(content_size)))
+			{
+				free(ptr);
+				return (0);
+			}
+		if (content && content_size)
 			ft_memcpy(ptr->content, content, content_size);
-		ptr->content_size = content ? content_size : 0;
+		else
+			ptr->content = 0;
+		ptr->content_size = (content && content_size) ? content_size : 0;
 		ptr->next = 0;
 	}
 	return (ptr);

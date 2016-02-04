@@ -6,18 +6,19 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 13:42:31 by jbyttner          #+#    #+#             */
-/*   Updated: 2016/02/04 16:35:48 by jbyttner         ###   ########.fr       */
+/*   Updated: 2016/02/04 20:17:32 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	num_substrings(const char *s, char c)
+static inline size_t	num_substrings(const char *s, char c, size_t *j)
 {
 	size_t	count;
 	size_t	i;
 	int		splitting;
 
+	*j = 0;
 	count = 1;
 	i = 0;
 	splitting = 1;
@@ -32,18 +33,17 @@ static size_t	num_substrings(const char *s, char c)
 		}
 		i++;
 	}
-	return (count);
+	return (sizeof(char *) * count);
 }
 
-char			**ft_strsplit(const char *s, char c)
+char					**ft_strsplit(const char *s, char c)
 {
 	char	**result;
 	size_t	i;
 	size_t	len;
 
-	if (!(result = (char **)ft_memalloc(sizeof(char *) * num_substrings(s, c))))
+	if (!s || !(result = ft_memalloc(num_substrings(s, c, &i))))
 		return (0);
-	i = 0;
 	while (*s != '\0')
 	{
 		if (*s == c)

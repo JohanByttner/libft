@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:37:41 by jbyttner          #+#    #+#             */
-/*   Updated: 2016/01/03 20:04:59 by jbyttner         ###   ########.fr       */
+/*   Updated: 2016/02/04 21:46:52 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,11 @@ void			*ft_memset(void *s, int c, size_t n);
 
 void			ft_bzero(void *s, size_t n);
 
-void			*ft_memcpy(void *dest, const void *src, size_t n);
+void			*ft_memcpy(void *restrict dest, const void *restrict src,
+					size_t n);
 
-void			*ft_memccpy(void *dest, const void *src, int c, size_t n);
+void			*ft_memccpy(void *restrict dest, const void *restrict src,
+					int c, size_t n);
 
 void			*ft_memmove(void *dest, const void *src, size_t n);
 
@@ -78,6 +80,9 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 
 int				ft_atoi(const char *nptr);
 
+long			ft_strtol(const char *restrict s,
+					char **restrict endp, int base);
+
 int				ft_islower(int c);
 
 int				ft_isupper(int c);
@@ -91,6 +96,8 @@ int				ft_isalnum(int c);
 int				ft_isascii(int c);
 
 int				ft_isprint(int c);
+
+int				ft_isspace(int c);
 
 int				ft_toupper(int c);
 
