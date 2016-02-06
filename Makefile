@@ -6,7 +6,7 @@
 #    By: jbyttner <jbyttner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/09/21 16:00:38 by jbyttner          #+#    #+#              #
-#    Updated: 2016/02/04 21:57:15 by jbyttner         ###   ########.fr        #
+#    Updated: 2016/02/06 13:28:18 by jbyttner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,8 @@ SRC =	ft_memset.c			\
 		ft_dmin.c			\
 		ft_memdup.c			\
 		ft_lstlast.c		\
-		ft_lstmerge.c		
+		ft_lstmerge.c		\
+		ft_strisdigit.c
 
 ROOTDIR=./
 LIBDIR=$(ROOTDIR)./

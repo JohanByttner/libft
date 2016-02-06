@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btostr.c                                        :+:      :+:    :+:   */
+/*   ft_strisdigit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
+/*   By: jbyttner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 22:53:15 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/12/08 12:59:30 by jbyttner         ###   ########.fr       */
+/*   Created: 2016/02/06 13:25:52 by jbyttner          #+#    #+#             */
+/*   Updated: 2016/02/06 13:28:38 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_btostr(int c)
+int		ft_strisdigit(char *str)
 {
-	if (c)
-		return ("True");
-	else
-		return ("False");
+	if (str)
+	{
+		while (*str && ft_isdigit(*str))
+			str++;
+		if (*str)
+			return (0);
+		else
+			return (1);
+	}
+	return (0);
 }
