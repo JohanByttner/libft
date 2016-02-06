@@ -6,7 +6,7 @@
 #    By: jbyttner <jbyttner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/09/21 16:00:38 by jbyttner          #+#    #+#              #
-#    Updated: 2016/02/06 13:28:18 by jbyttner         ###   ########.fr        #
+#    Updated: 2016/02/06 16:51:21 by jbyttner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,8 +101,8 @@ RM=rm -f
 all:	$(NAME)
 
 $(NAME):
-	$(CC) $(CFLAGS) -I$(INCDIR) $(SRC)
-	$(AR) $(ARFLAGS) $(LIBDIR)$(NAME) $(OBJ)
+	$(CC) $(CFLAGS) $(SRC)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 clean:
