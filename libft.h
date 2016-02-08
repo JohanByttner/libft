@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:37:41 by jbyttner          #+#    #+#             */
-/*   Updated: 2016/02/08 12:40:52 by jbyttner         ###   ########.fr       */
+/*   Updated: 2016/02/08 18:21:25 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 
 int				ft_atoi(const char *nptr);
 
-long			ft_strtol(const char *restrict s,
+long			ft_strtol(const char *s,
 					char **restrict endp, int base);
 
 int				ft_islower(int c);

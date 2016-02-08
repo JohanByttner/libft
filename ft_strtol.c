@@ -6,15 +6,14 @@
 /*   By: jbyttner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/04 16:39:10 by jbyttner          #+#    #+#             */
-/*   Updated: 2016/02/04 20:00:45 by jbyttner         ###   ########.fr       */
+/*   Updated: 2016/02/08 18:20:38 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#define FT_LONG_MAX 9223372036854775807L
-#define FT_LONG_MIN (-FT_LONG_MAX - 1)
+#include <limits.h>
 
-static inline const char	*ft_strtol_trim(const char *restrict s,
+static inline const char	*ft_strtol_trim(const char *s,
 		int *base, int *sign)
 {
 	char			c;
@@ -50,7 +49,7 @@ static inline int			ft_strtol_gen_c(char *c)
 	return (1);
 }
 
-static inline const char	*ft_strtol_gen(const char *restrict s,
+static inline const char	*ft_strtol_gen(const char *s,
 		unsigned long *acc, int base, int *overflow)
 {
 	unsigned long	cutoff;
@@ -60,7 +59,7 @@ static inline const char	*ft_strtol_gen(const char *restrict s,
 
 	sign = *acc;
 	*acc = 0;
-	cutoff = sign ? -(unsigned long)FT_LONG_MIN : (unsigned long)FT_LONG_MAX;
+	cutoff = sign ? -(unsigned long)LONG_MIN : (unsigned long)LONG_MAX;
 	remnant = cutoff % base;
 	cutoff /= base;
 	while ((c = *s++))
@@ -80,7 +79,7 @@ static inline const char	*ft_strtol_gen(const char *restrict s,
 }
 
 long						ft_strtol(const char *restrict s,
-		char **restrict endp, int base)
+		char **endp, int base)
 {
 	int				sign;
 	const char		*str;
@@ -94,7 +93,7 @@ long						ft_strtol(const char *restrict s,
 	acc = sign;
 	str = ft_strtol_gen(str, &acc, base, &overflow);
 	if (overflow == -1)
-		acc = sign ? FT_LONG_MIN : FT_LONG_MAX;
+		acc = sign ? LONG_MIN : LONG_MAX;
 	else if (sign)
 		acc = -acc;
 	if (endp)
