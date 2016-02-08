@@ -6,15 +6,15 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 16:21:55 by jbyttner          #+#    #+#             */
-/*   Updated: 2015/11/29 00:35:17 by jbyttner         ###   ########.fr       */
+/*   Updated: 2016/02/08 12:30:28 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int					ft_toupper(int c)
 {
-	if (ft_islower(c))
+	if ('a' <= c && c <= 'z')
 		return (c + 'A' - 'a');
 	else
 		return (c);
