@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:37:41 by jbyttner          #+#    #+#             */
-/*   Updated: 2016/02/08 18:21:25 by jbyttner         ###   ########.fr       */
+/*   Updated: 2016/02/20 19:03:29 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,5 +188,7 @@ t_list			*ft_lstlast(t_list *list);
 t_list			*ft_lstmerge(t_list *l1, t_list *l2);
 
 int				ft_strisdigit(char *str);
+
+void			ft_strarrclr(char **str);
 
 #endif
