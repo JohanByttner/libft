@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:37:41 by jbyttner          #+#    #+#             */
-/*   Updated: 2016/02/20 19:03:29 by jbyttner         ###   ########.fr       */
+/*   Updated: 2016/05/06 00:02:36 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+# define BUFF_SIZE 32
 
 /*
 ** All library includes should happen in the respective files.
@@ -31,6 +32,21 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+
+/*
+** Heap memory is associated with a file descriptor.
+** content_size in the file descriptor gives the length of array
+** in t_mem. This structure is meant to be safe to cast.
+** The fd is accessed as ((t_mem *)list->content)->fd)
+*/
+
+typedef struct	s_mem
+{
+	int				fd;
+	char			*array;
+}				t_mem;
+
+int				get_next_line(const int fd, char **line);
 
 /*
 ** The functions here follow the order in libft.pdf
