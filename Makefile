@@ -6,7 +6,7 @@
 #    By: jbyttner <jbyttner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/09/21 16:00:38 by jbyttner          #+#    #+#              #
-#    Updated: 2016/05/06 00:00:10 by jbyttner         ###   ########.fr        #
+#    Updated: 2016/05/06 00:32:55 by jbyttner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,7 +87,7 @@ SRC_FILES =					\
 		get_next_line.c
 
 INCLUDES = -I ./includes/
-SRC_DIR=./src/
+SRC_DIR=./srcs/
 BUILD_DIR=./obj/
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
@@ -111,15 +111,15 @@ endif
 
 all:	$(NAME)
 
-$(NAME): $(OBJ) includes/libft.h
+$(NAME): $(OBJ)
 	@echo Compiling for $(TARGET_OS)
 	@echo "Making >> $(NAME) <<"
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 	@ranlib $(NAME)
 
-$(OBJ): $(SRC)
+$(BUILD_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(BUILD_DIR)
-	@$(CC) $(CFLAGS) $(INCLUDES) $< -o $@
+	@-$(CC) $(CFLAGS) $(INCLUDES) $< -o $@
 
 clean:
 	@echo "Removing objects in >> $(NAME) <<"
