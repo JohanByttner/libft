@@ -6,12 +6,13 @@
 #    By: jbyttner <jbyttner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/09/21 16:00:38 by jbyttner          #+#    #+#              #
-#    Updated: 2016/02/20 19:02:53 by jbyttner         ###   ########.fr        #
+#    Updated: 2016/05/05 23:54:27 by jbyttner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libft.a
-SRC =	ft_memset.c			\
+SRC_FILES =					\
+		ft_memset.c			\
 		ft_bzero.c			\
 		ft_memcpy.c			\
 		ft_memccpy.c		\
@@ -84,33 +85,47 @@ SRC =	ft_memset.c			\
 		ft_strisdigit.c		\
 		ft_strarrclr.c
 
-ROOTDIR=./
-LIBDIR=$(ROOTDIR)./
-BINDIR=$(ROOTDIR)./
-INCDIR=$(ROOTDIR)includes/
-BUILDDIR=$(ROOTDIR)./
-DIR=./
+INCLUDES = -I ./includes/
+SRC_DIR=./src/
+BUILD_DIR=./obj/
 
-OBJ=$(SRC:.c=.o)
+OBJ_FILES = $(SRC_FILES:.c=.o)
+SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
+OBJ = $(addprefix $(BUILD_DIR), $(OBJ_FILES))
+
 CC=gcc
 CFLAGS=-Wall -Wextra -Werror -c
 AR=ar
 ARFLAGS=rc
-RM=rm -f
+RM=rm -rf
+
+UNAME := $(shell uname)
+ifeq ($(UNAME), Linux)
+	TARGET_OS=Linux
+else
+	TARGET_OS=OSX
+endif
 
 .PHONY : all clean fclean re
 
 all:	$(NAME)
 
-$(NAME):
-	$(CC) $(CFLAGS) $(SRC) -I $(INCDIR)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJ)
-	ranlib $(NAME)
+$(NAME): $(OBJ) includes/libft.h
+	@echo Compiling for $(TARGET_OS)
+	@echo "Making >> $(NAME) <<"
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJ)
+	@ranlib $(NAME)
+
+$(OBJ): $(SRC)
+	@mkdir -p $(BUILD_DIR)
+	@$(CC) $(CFLAGS) $(INCLUDES) $< -o $@
 
 clean:
-	$(RM) $(OBJ)
+	@echo "Removing objects in >> $(NAME) <<"
+	@$(RM) $(OBJ) $(BUILD_DIR)
 
 fclean:	clean
-	$(RM) $(LIBDIR)$(NAME)
+	@echo "Removing binaries in >> $(NAME) <<"
+	@$(RM) $(NAME)
 
 re: fclean all
