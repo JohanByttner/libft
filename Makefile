@@ -6,7 +6,7 @@
 #    By: jbyttner <jbyttner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/09/21 16:00:38 by jbyttner          #+#    #+#              #
-#    Updated: 2016/05/06 00:32:55 by jbyttner         ###   ########.fr        #
+#    Updated: 2016/05/06 01:44:55 by jbyttner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -95,7 +95,7 @@ SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ = $(addprefix $(BUILD_DIR), $(OBJ_FILES))
 
 CC=gcc
-CFLAGS=-Wall -Wextra -Werror -c
+CFLAGS=-Wall -Wextra -Werror -c -O1
 AR=ar
 ARFLAGS=rc
 RM=rm -rf
