@@ -6,7 +6,7 @@
 #    By: jbyttner <jbyttner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/09/21 16:00:38 by jbyttner          #+#    #+#              #
-#    Updated: 2016/05/06 01:44:55 by jbyttner         ###   ########.fr        #
+#    Updated: 2016/07/11 20:30:11 by jbyttner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,6 +84,7 @@ SRC_FILES =					\
 		ft_strskip.c		\
 		ft_strisdigit.c		\
 		ft_strarrclr.c		\
+		ft_fls.c			\
 		get_next_line.c
 
 INCLUDES = -I ./includes/

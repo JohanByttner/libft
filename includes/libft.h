@@ -6,7 +6,7 @@
 /*   By: jbyttner <jbyttner@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:37:41 by jbyttner          #+#    #+#             */
-/*   Updated: 2016/05/06 00:16:35 by jbyttner         ###   ########.fr       */
+/*   Updated: 2016/07/11 20:21:41 by jbyttner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -190,5 +190,11 @@ t_list			*ft_lstmerge(t_list *l1, t_list *l2);
 int				ft_strisdigit(char *str);
 
 void			ft_strarrclr(char **str);
+
+/*
+** Bit-manipulation functions
+*/
+
+int				ft_fls(int byte);
 
 #endif
